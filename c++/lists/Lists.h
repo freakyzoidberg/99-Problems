@@ -2,9 +2,16 @@
 #define INC_99PROBLEMS_P01_H
 
 #include <list>
+#include <stdexcept>
 
 namespace Lists {
-    int returnLast(std::list<int> _list);
+    template<typename T>
+    T returnLast(std::list<T> _list) {
+        if (_list.empty()) {
+            throw new std::invalid_argument("List is empty");
+        }
+        return _list.back();
+    }
 }
 
 
