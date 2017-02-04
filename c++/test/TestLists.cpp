@@ -22,3 +22,15 @@ TEST_CASE( "Should return last and penultimate char of a char list", "[lastAndPe
   std::list<char> res = {'c', 'd'};
   REQUIRE(Lists::returnLastAndPenultimate<char>(dummy) == res);
 }
+
+TEST_CASE( "Should return kth int of an int list", "[kThElement]" ) {
+  std::list<int> dummy = {1, 2, 3, 4, 5};
+  int res = 3;
+  REQUIRE(Lists::kThElement<int>(dummy, 3) == res);
+}
+
+TEST_CASE( "Should return kth char of a char list", "[kThElement]" ) {
+  std::list<char> dummy = {'a', 'b', 'c', 'd'};
+  char res = 'c';
+  REQUIRE(Lists::kThElement<char>(dummy, 3) == res);
+}

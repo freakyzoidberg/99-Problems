@@ -6,7 +6,7 @@
 
 namespace Lists {
   template<typename T>
-    T returnLast(const std::list<T> _list) {
+  T returnLast(const std::list<T> _list) {
     if (_list.empty()) {
       throw new std::invalid_argument("List is empty");
     }
@@ -14,7 +14,7 @@ namespace Lists {
   }
   
   template<typename T>
-    std::list<T> returnLastAndPenultimate(const std::list<T> _list) {
+  std::list<T> returnLastAndPenultimate(const std::list<T> _list) {
     if (_list.size() < 2) {
       throw new std::invalid_argument("List has less than 2 elements");
     }
@@ -22,6 +22,16 @@ namespace Lists {
     auto last_it = std::prev(_list.end());
     return {*std::prev(last_it), *last_it};
   }
+  
+  template<typename T>
+  T kThElement(const std::list<T> _list, int _k) {
+    if (_list.size() < _k) {
+      throw new std::invalid_argument("List has less than 2 elements");
+    }
+
+    return *std::next(_list.begin(), _k - 1);;
+  }
+
 }
 
 
