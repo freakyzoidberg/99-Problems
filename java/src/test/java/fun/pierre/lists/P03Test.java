@@ -8,12 +8,12 @@ import static org.junit.Assert.assertThat;
 
 public class P03Test {
     @Test
-    public void shouldFindLastAndPenultimateOfIntList() {
+    public void shouldFindkThElementOfIntList() {
         assertThat(P03.kThElement(asList(1, 2, 3, 4, 5), 3), is(equalTo(3)));
     }
 
     @Test
-    public void shouldFindLastAndPenultimateOfCharList() {
+    public void shouldFindkThElementOfCharList() {
         assertThat(P03.kThElement(asList('a', 'b', 'c', 'd'), 3), is(equalTo('c')));
     }
 }
