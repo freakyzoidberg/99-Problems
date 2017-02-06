@@ -1,5 +1,6 @@
 #include <catch.hpp>
 #include <Lists.h>
+#include "../external/Catch/include/catch.hpp"
 
 TEST_CASE( "Should return last int of an int list", "[lastOfIntList]" ) {
   std::list<int> dummy = {1, 2, 3, 4, 5};
@@ -45,4 +46,18 @@ TEST_CASE( "Should return number element of a char list", "[numberElement]" ) {
 std::list<char> dummy = {'a', 'b', 'c', 'd'};
 char res = 4;
 REQUIRE(Lists::numberElement<char>(dummy) == res);
+}
+
+TEST_CASE( "Should return reversed int list", "[reverseElement]" ) {
+std::list<int> dummy = *Lists::reverseElement<int>({1, 2, 3, 4, 5});
+std::list<int> res = {5, 4, 3, 2, 1};
+REQUIRE(res.size() == dummy.size());
+REQUIRE(std::equal(std::begin(res), std::end(res), std::begin(dummy)));
+}
+
+TEST_CASE( "Should return reversed char list", "[reverseElement]" ) {
+std::list<char> dummy = *Lists::reverseElement<char>({'a', 'b', 'c', 'd'});
+std::list<char> res = {'d', 'c', 'b', 'a'};
+REQUIRE(res.size() == dummy.size());
+REQUIRE(std::equal(std::begin(res), std::end(res), std::begin(dummy)));
 }

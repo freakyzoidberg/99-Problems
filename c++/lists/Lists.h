@@ -36,6 +36,13 @@ namespace Lists {
   unsigned long numberElement(const std::list<T> _list) {
     return _list.size();
   }
+
+  template <typename T>
+  std::unique_ptr<std::list<T>> reverseElement(const std::list<T> _list) {
+    std::unique_ptr<std::list<T>> res(new std::list<T>(_list.size()));
+    std::reverse_copy(std::begin(_list), std::end(_list), std::begin(*res.get()));
+    return res;
+  }
 }
 
 
