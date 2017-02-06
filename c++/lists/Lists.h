@@ -32,6 +32,10 @@ namespace Lists {
     return *std::next(_list.begin(), _k - 1);;
   }
 
+  template <typename T>
+  unsigned long numberElement(const std::list<T> _list) {
+    return _list.size();
+  }
 }
 
 

@@ -34,3 +34,15 @@ TEST_CASE( "Should return kth char of a char list", "[kThElement]" ) {
   char res = 'c';
   REQUIRE(Lists::kThElement<char>(dummy, 3) == res);
 }
+
+TEST_CASE( "Should return number element of an int list", "[numberElement]" ) {
+std::list<int> dummy = {1, 2, 3, 4, 5};
+int res = 5;
+REQUIRE(Lists::numberElement<int>(dummy) == res);
+}
+
+TEST_CASE( "Should return number element of a char list", "[numberElement]" ) {
+std::list<char> dummy = {'a', 'b', 'c', 'd'};
+char res = 4;
+REQUIRE(Lists::numberElement<char>(dummy) == res);
+}
