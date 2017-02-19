@@ -61,3 +61,24 @@ std::list<char> res = {'d', 'c', 'b', 'a'};
 REQUIRE(res.size() == dummy.size());
 REQUIRE(std::equal(std::begin(res), std::end(res), std::begin(dummy)));
 }
+
+TEST_CASE( "Should test not palindrome int list", "[palindrome]" ) {
+  bool pal = Lists::isPalindrome<int>({1, 2, 3, 4, 5});
+  REQUIRE(!pal);
+}
+
+TEST_CASE( "Should test palindrome int list", "[palindrome]" ) {
+  bool pal = Lists::isPalindrome<int>({1, 2, 3, 2, 1});
+  REQUIRE(pal);
+}
+
+
+TEST_CASE( "Should test not palindrome char list", "[palindrome]" ) {
+  bool pal = Lists::isPalindrome<char>({'a', 'b', 'c', 'd'});
+  REQUIRE(!pal);
+}
+
+TEST_CASE( "Should test palindrome char list", "[palindrome]" ) {
+  bool pal = Lists::isPalindrome<char>({'a', 'b', 'b', 'a'});
+  REQUIRE(pal);
+}

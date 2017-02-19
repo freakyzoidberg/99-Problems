@@ -43,6 +43,22 @@ namespace Lists {
     std::reverse_copy(std::begin(_list), std::end(_list), std::begin(*res.get()));
     return res;
   }
+
+  template <class Iterator, class U = typename std::iterator_traits<Iterator>::value_type>
+  bool _isPalindrome(Iterator left, Iterator right) {
+    if (std::distance(left, right) <= 1) {
+      return true;
+    }
+    return *left == *right && _isPalindrome(std::next(left), std::prev(right));
+  }
+
+  template <typename T>
+  bool isPalindrome(const std::list<T> _list) {
+    if (_list.size() <= 1) {
+      return true;
+    }
+    return _isPalindrome(_list.begin(), std::prev(_list.end()));
+  }
 }
 
 
